@@ -1,5 +1,7 @@
 package Objects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,19 +14,22 @@ public class WikiMoviePage {
 	
 	//to find all Webelements in page using FindBy
 	
-	@FindBy(xpath="//table[@class='infobox vevent']//tbody//tr[12]//td") private WebElement ReleaseDate;
+	@FindBy(xpath="//table[@class='infobox vevent']//tbody//tr[13]//td") private WebElement ReleaseDate;
 	
-	@FindBy(xpath="//table[@class='infobox vevent']//tbody//tr[14]//td") private WebElement Country;
+	@FindBy(xpath="//table[@class='infobox vevent']//tbody//tr[15]//td") private WebElement Country;
+	
+	@FindBy(xpath="//table[@class='infobox vevent']//tbody//tr/td") private List<WebElement> movieDetails;
+	
 	
 	public String movieDate() {
-		String movieReleaseDate = ReleaseDate.getText();
+		String movieReleaseDate = movieDetails.get(movieDetails.size()-6).getText();
 		return movieReleaseDate;
 		
 	}
 	
 	public String movieCountry() {
 		
-		String movieCountryName = Country.getText();
+		String movieCountryName = movieDetails.get(movieDetails.size()-4).getText();
 		return movieCountryName;
 		
 	}

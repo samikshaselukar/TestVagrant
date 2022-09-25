@@ -16,7 +16,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestMethod_Comparison {
 	WebDriver driver; 
 	//Declare variable
-	String Movie = "Pushpa: The Rise";
+	String Movie = "Andaz apna apna";
 	String imdbReleaseDate;
 	String imdbCountryName;
 	
