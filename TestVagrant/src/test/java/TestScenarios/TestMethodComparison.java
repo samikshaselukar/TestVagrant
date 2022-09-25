@@ -1,35 +1,43 @@
 package TestScenarios;
 
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import Objects.GetMovieName;
 import Objects.ImdbHomePage;
 import Objects.ImdbMoviePage;
 import Objects.WikiHomePage;
 import Objects.WikiMoviePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestMethod_Comparison {
+public class TestMethodComparison {
 	WebDriver driver; 
 	//Declare variable
-	String Movie = "Andaz apna apna";
+	String Movie;
 	String imdbReleaseDate;
-	String imdbCountryName;
-	
+	String imdbCountryName;	
 	String wikiReleaseDate;
 	String wikiCountryName;
 	
+	
+	
+	
+	
 	@BeforeTest
-	public void beforetest()
+	public void beforetest() throws IOException
 	{
+		GetMovieName movieName= new GetMovieName();
+		Movie= movieName.mName();
+		//Movie ="Pushpa:The Rise";
 		//no need of system.setProperty
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		
+		driver = new ChromeDriver();		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
