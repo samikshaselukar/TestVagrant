@@ -17,5 +17,6 @@ To run program through maven commandline type command given below:
 mvn "-Dmoviename=your_movie_name" clean install
 
 Here give  name of the movie you want to validate in place of your_movie_name.
+
 e.g. mvn "-Dmoviename=Pushpa:The Rise" clean install
 
