@@ -1,3 +1,7 @@
 hello im adding new file 
 pl find it
 im working on it since long
+
+
+Im learning git and github
+help me
